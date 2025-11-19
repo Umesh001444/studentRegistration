@@ -1,0 +1,94 @@
+:root{
+  --bg-1: linear-gradient(180deg,#0f172a 0%, #071032 60%);
+  --card-bg: linear-gradient(180deg,#0f172a00 0%, #ffffff10 100%);
+  --glass: rgba(255,255,255,0.06);
+  --muted: #94a3b8;
+  --primary: #06B6D4;
+  --accent: #7C3AED;
+  --success: #059669;
+  --maxw: 980px;
+  --radius: 14px;
+  --glass-2: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0;
+  background: radial-gradient(1200px 500px at 10% 10%, rgba(124,58,237,0.12), transparent 10%),
+              radial-gradient(800px 400px at 90% 90%, rgba(6,182,212,0.08), transparent 10%),
+              linear-gradient(180deg,#0f172a 0%, #071032 100%);
+  color: #e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.page{width:100%; max-width:var(--maxw); margin:0 auto; padding:20px;}
+
+.hero{
+  display:grid;
+  grid-template-columns: 420px 1fr;
+  gap:28px;
+  align-items:start;
+}
+
+/* Brand */
+.brand{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  margin-bottom:12px;
+}
+.logo{width:56px;height:56px;border-radius:10px;flex:0 0 56px;box-shadow:0 6px 18px rgba(3,7,18,0.6)}
+.brand h1{margin:0;font-size:20px; font-weight:700; color:#fff}
+.subtitle{margin:2px 0 0;color:var(--muted); font-size:13px}
+
+/* Card */
+.card{
+  position:relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  min-height:420px;
+  overflow:hidden;
+  backdrop-filter: blur(6px) saturate(120%);
+}
+
+/* Form */
+.form {max-width:520px}
+.form h2{margin:0 0 14px 0; font-size:18px; color:#fff}
+.field{display:block;margin-bottom:14px}
+.label-text{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}
+input[type="text"], input[type="email"], input[type="password"]{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color:#e6eef8;
+  font-size:15px;
+  outline:none;
+  transition: box-shadow .18s, transform .12s;
+}
+input:focus{box-shadow:0 8px 20px rgba(6,182,212,0.08); transform:translateY(-1px); border-color:rgba(6,182,212,0.22)}
+.hint{display
+:block; font-size:11px; color:var(--muted); margin-top:4px}
+button{
+  background: var(--primary);
+  color:#fff;
+  border:none;
+  padding:12px 20px;
+  font-size:15px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  transition: background .18s, transform .12s;
+}
+button:hover{background: #0e7490; transform:translateY(-1px)}
+button:active{transform:translateY(0px)}

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Registration — StudentRegistration</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="brand">
+        <svg viewBox="0 0 24 24" class="logo" aria-hidden="true">
+          <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
+          <rect rx="6" width="24" height="24" fill="url(#g)"></rect>
+          <path d="M7 13c1.5-2 3-3 5-3s3.5 1 5 3" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <h1>StudentRegistration</h1>
+          <p class="subtitle">Register quickly. Learn endlessly.</p>
+        </div>
+      </div>
+
+      <div class="card" id="card">
+        <form id="regForm" class="form" novalidate>
+          <h2>Create your account</h2>
+
+          <label class="field">
+            <span class="label-text">Full name</span>
+            <input autocomplete="name" type="text" name="name" id="name" required minlength="2" />
+            <small class="hint">e.g. Priya Sharma</small>
+          </label>
+
+          <label class="field">
+            <span class="label-text">Email</span>
+            <input autocomplete="email" type="email" name="email" id="email" required />
+            <small class="hint">We'll send a welcome note — no spam.</small>
+          </label>
+
+          <label class="field">
+            <span class="label-text">Password</span>
+            <div class="pw-row">
+              <input autocomplete="new-password" type="password" name="password" id="password" required minlength="6" />
+              <button type="button" class="pw-toggle" id="pwToggle" aria-label="Toggle password visibility">Show</button>
+            </div>
+            <small class="hint">At least 6 characters.</small>
+          </label>
+
+          <label class="field">
+            <span class="label-text">Course (optional)</span>
+            <input type="text" name="course" id="course" />
+            <small class="hint">e.g. B.Tech Computer Science</small>
+          </label>
+
+          <div class="actions">
+            <button id="submitBtn" class="btn primary" type="submit">
+              <span class="btn-text">Register</span>
+              <span class="loader" aria-hidden="true"></span>
+            </button>
+
+            <button id="resetBtn" class="btn ghost" type="button">Reset</button>
+          </div>
+
+          <p class="foot">
+            By registering you agree to our <a href="#" onclick="return false">Terms</a>.
+          </p>
+        </form>
+
+        <!-- success panel (hidden until registration succeeds) -->
+        <aside id="successPanel" class="success-panel" hidden aria-hidden="true">
+          <div class="check">
+            <svg viewBox="0 0 48 48" class="check-svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="22" fill="#0EA5A4" opacity="0.16"></circle>
+              <path d="M15 25l5.2 5L34 16" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 id="succTitle">You're registered!</h3>
+          <p id="succMsg" class="succMsg">Welcome aboard — we created your student profile.</p>
+
+          <dl class="meta">
+            <div>
+              <dt>Student ID</dt>
+              <dd id="studentId">—</dd>
+            </div>
+            <div>
+              <dt>Name</dt>
+              <dd id="studentName">—</dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd id="studentEmail">—</dd>
+            </div>
+          </dl>
+
+          <div class="panel-actions">
+            <button id="addAnother" class="btn">Register another</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="client.js" defer></script>
+</body>
+</html>
